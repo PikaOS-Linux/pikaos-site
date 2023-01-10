@@ -1,0 +1,70 @@
+---
+import { Icon } from 'astro-icon';
+import { getHomePermalink, getPermalink } from '~/utils/permalinks';
+
+const links = [
+  {
+    title: 'PikaOS',
+    items: [
+      { title: 'Features', href: '#features' },
+      { title: 'Download', href: '#download' },
+    ],
+  },
+];
+
+const social = [
+  { label: 'Discord', icon: 'tabler:brand-discord', href: 'https://discord.gg/aGR4YFCB' },
+  { label: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/PikaOS-Linux' },
+];
+---
+
+<footer class="border-t border-gray-200 dark:border-slate-800">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="grid grid-cols-12 gap-4 gap-y-8 sm:gap-8 py-8 md:py-12">
+      {
+        links.map(({ title, items }) => (
+          <div class="col-span-6 md:col-span-3 lg:col-span-2">
+            <div class="text-gray-800 dark:text-gray-300 font-medium mb-2">{title}</div>
+            {items && Array.isArray(items) && items.length > 0 && (
+              <ul class="text-sm">
+                {items.map(({ title, href }) => (
+                  <li class="mb-2">
+                    <a
+                      class="text-gray-600 hover:text-gray-700 hover:underline dark:text-gray-400 transition duration-150 ease-in-out"
+                      href={href}
+                    >
+                      {title}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        ))
+      }
+    </div>
+    <div class="md:flex md:items-center md:justify-between py-6 md:py-8">
+      <ul class="flex mb-4 md:order-1 -ml-2 md:ml-4 md:mb-0">
+        {
+          social.map(({ label, href, icon }) => (
+            <li>
+              <a
+                class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
+                aria-label={label}
+                href={href}
+              >
+                <Icon name={icon} class="w-5 h-5" />
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+
+      <div class="text-sm text-gray-700 mr-4 dark:text-slate-400">
+
+        Made by <a class="text-blue-600 hover:underline dark:text-gray-200" href="https://github.com/PikaOS-Linux"> the PikaOS team</a> ·
+        All rights reserved.
+      </div>
+    </div>
+  </div>
+</footer>

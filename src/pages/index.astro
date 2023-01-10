@@ -1,0 +1,271 @@
+---
+import { SITE } from "~/config.mjs";
+import Layout from "~/layouts/PageLayout.astro";
+
+import Hero from "~/components/widgets/Hero.astro";
+import Note from "~/components/widgets/Note.astro";
+import Features from "~/components/widgets/Features.astro";
+import Features2 from "~/components/widgets/Features2.astro";
+import Steps from "~/components/widgets/Steps.astro";
+import Content from "~/components/widgets/Content.astro";
+import FAQs from "~/components/widgets/FAQs.astro";
+import Stats from "~/components/widgets/Stats.astro";
+import CallToAction from "~/components/widgets/CallToAction.astro";
+
+const meta = {
+  title: SITE.title,
+  description: SITE.description,
+  dontUseTitleTemplate: true,
+};
+---
+
+<Layout {meta}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    callToAction={{
+      text: "Get PikaOS",
+      href: "https://pikaos.ferreo.dev/PikaOS-Gnome-2210-amd64_22.12.27.iso",
+      icon: "tabler:download",
+    }}
+    callToAction2={{ text: "Learn more", href: "#features" }}
+    image={{
+      src: import("~/assets/images/hero.png"),
+      alt: "AstroWind Hero Image",
+    }}
+  >
+    <Fragment slot="title">
+      Your new linux distro, <span>PikaOS</span>!
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="hidden sm:inline">
+        PikaOS is a gaming focused linux distribution focussing on ease of use and high
+        compatability. Using the know how from <a class="underline" href="https://nobaraproject.org/">Nobara</a> combined with a <a class="underline" href="https://ubuntu.com/">Ubuntu</a> base, PikaOS is almost unrivaled in software comaptability.
+      </span>
+    </Fragment>
+  </Hero>
+
+  <!-- Note Widget ******************* -->
+
+  <Note />
+
+  <!-- Features Widget *************** -->
+
+  <Features
+    highlight="Features"
+    title=""
+    subtitle="What sets PikaOS apart?"
+    items={[
+      [
+        {
+          title: "Cute Birb",
+          description:
+            "PikaOS has a cute birb as the logo/mascot. Who doesn't love the litte guy?",
+          icon: "tabler:viewfinder",
+        },
+        {
+          title: "Gaming Out Of The box",
+          description:
+            "PikeOS is setup to enable as pain free as possible linux gaming out of the box.",
+          icon: "tabler:components",
+        },
+        {
+          title: "Drivers Included",
+          description:
+            "We include the best drivers for your hardware either baked into the OS or installable through our welcome app.",
+          icon: "tabler:list-check",
+        },
+      ],
+      [
+        {
+          title: "Excellent Performance",
+          description:
+            "The combination of upto date drivers and a custom tweaked kernel mean PikaOS is fast.",
+          icon: "tabler:rocket",
+        },
+        {
+          title: "Excellent Compatability",
+          description:
+            "Due to the Ubuntu base and custom patches PikaOS has high levels of software and hardware compatability.",
+          icon: "tabler:app-window",
+        },
+        {
+          title: "Open Source",
+          description:
+            "All of our code can be found on our github and are ppas are available on launchpad. Contributions are also very welcome!",
+          icon: "tabler:bulb",
+        },
+      ],
+    ]}
+  />
+
+  <!-- Content Widget **************** -->
+
+  <!-- <Content
+    highlight="Inside template"
+    title="And what's inside? ..."
+    content="Ne dicta praesent ocurreret has, diam theophrastus at pro. Eos etiam regione ut, persius eripuit quo id. Sit te euismod tacimates."
+    items={[
+      {
+        title: "Per ei quaeque sensibus",
+        description:
+          "Ex usu illum iudico molestie. Pro ne agam facete mediocritatem, ridens labore facete mea ei. Pro id apeirian dignissim.",
+      },
+      {
+        title: "Cu imperdiet posidonium sed",
+        description:
+          "Amet utinam aliquando ut mea, malis admodum ocurreret nec et, elit tibique cu nec. Nec ex maluisset inciderint, ex quis.",
+      },
+      {
+        title: "Nulla omittam sadipscing mel ne",
+        description:
+          "At sed possim oporteat probatus, justo graece ne nec, minim commodo legimus ut vix. Ut eos iudico quando soleat, nam modus.",
+      },
+    ]}
+    image={{
+      src: import("~/assets/images/caos.jpg"),
+      alt: "Colorful Image",
+    }}
+  /> -->
+
+   <!-- Features2 Widget ************** -->
+<!-- 
+  <Features2
+    title="Most used widgets"
+    subtitle="Provides frequently used components for building websites using Tailwind CSS"
+    highlight="Components"
+    items={[
+      {
+        title: "Headers",
+        description:
+          "In general, Headers contain information that makes it easier for visitors to interact with the website.",
+        icon: "flat-color-icons:template",
+      },
+      {
+        title: "Heros",
+        description:
+          "If you want your website to get more than its fair share of visitors, the Hero section needs to be stellar.",
+        icon: "flat-color-icons:gallery",
+      },
+      {
+        title: "Features",
+        description:
+          "Display your product in action and how the Features actually create a solution for your target customer.",
+        icon: "flat-color-icons:todo-list",
+      },
+      {
+        title: "Content",
+        description:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.",
+        icon: "flat-color-icons:document",
+      },
+      {
+        title: "Call-to-Action",
+        description:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.",
+        icon: "flat-color-icons:advertising",
+      },
+      {
+        title: "Pricing",
+        description:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.",
+        icon: "flat-color-icons:currency-exchange",
+      },
+      {
+        title: "Testimonial",
+        description:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.",
+        icon: "flat-color-icons:voice-presentation",
+      },
+      {
+        title: "Contact",
+        description:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.",
+        icon: "flat-color-icons:business-contact",
+      },
+      {
+        title: "Footers",
+        description:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.",
+        icon: "icon-park:page-template",
+      },
+    ]}
+  /> -->
+
+  <!-- FAQs Widget ******************* -->
+
+  <!-- <FAQs
+    title="Frequently Asked Questions"
+    subtitle="Duis turpis dui, fringilla mattis sem nec, fringilla euismod neque. Morbi tincidunt lacus nec tortor scelerisque pulvinar."
+    highlight="FAQs"
+    items={[
+      [
+        {
+          question: "What do I need to start?",
+          answer:
+            "Space, the final frontier. These are the voyages of the Starship Enterprise. Its five-year mission: to explore strange new worlds. Many say exploration is part of our destiny, but it’s actually our duty to future generations.",
+        },
+        {
+          question: "How to install the Astro + Tailwind CSS template?",
+          answer:
+            "Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if they're going to make more shows. Some pilots get picked and become television programs. Some don't, become nothing. She starred in one of the ones that became nothing.",
+        },
+        {
+          question: "What's something that you don't understand?",
+          answer:
+            "A flower in my garden, a mystery in my panties. Heart attack never stopped old Big Bear. I didn't even know we were calling him Big Bear.",
+        },
+      ],
+      [
+        {
+          question: "What's an example of when you changed your mind?",
+          answer:
+            "Michael Knight a young loner on a crusade to champion the cause of the innocent. The helpless. The powerless in a world of criminals who operate above the law. Here he comes Here comes Speed Racer. He's a demon on wheels.",
+        },
+        {
+          question: "What is something that you would like to try again?",
+          answer:
+            "A business big enough that it could be listed on the NASDAQ goes belly up. Disappears! It ceases to exist without me. No, you clearly don't know who you're talking to, so let me clue you in.",
+        },
+        {
+          question:
+            "If you could only ask one question to each person you meet, what would that question be?",
+          answer:
+            "This is not about revenge. This is about justice. A lot of things can change in twelve years, Admiral. Well, that's certainly good to know. About four years. I got tired of hearing how young I looked.",
+        },
+      ],
+    ]}
+  /> -->
+
+  <!-- Stats Widget ****************** -->
+
+  <!-- <Stats
+    items={[
+      { name: "Downloads", value: "132K" },
+      { name: "Stars", value: "24.8K" },
+      { name: "Forks", value: "10.3K" },
+      { name: "Users", value: "48.4K" },
+    ]}
+  /> -->
+
+  <!-- CallToAction Widget *********** -->
+  <div id="download">
+  <CallToAction
+    callToAction={{
+      text: "Download ISO",
+      href: "https://pikaos.ferreo.dev/PikaOS-Gnome-2210-amd64_22.12.27.iso",
+      icon: "tabler:download",
+    }}
+  >
+    <Fragment slot="title">
+      PikaOS Download
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Grab our latest PikaOS ISO now!<br/><br/>
+      <a class="underline pb-5" href="https://pikaos.ferreo.dev/PikaOS-Gnome-2210-amd64_22.12.27.md5">MD5 hash here.</a>
+    </Fragment>
+  </CallToAction>
+</div>
+</Layout>
