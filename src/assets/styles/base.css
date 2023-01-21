@@ -42,15 +42,3 @@
 [data-aw-toggle-menu].expanded g > path:last-child {
   @apply rotate-45 translate-y-[-8px] translate-x-[14px];
 }
-
-.dark .pikalogo {
-  background-image: url("images/pika-logo-text-dark.svg");
-  background-position: center;
-  background-size: cover;
-}
-
-.pikalogo {
-  background-image: url("images/pika-logo-text.svg");
-  background-position: center;
-  background-size: cover;
-}
