@@ -40,8 +40,13 @@ const meta = {
 
     <Fragment slot="subtitle">
       <span class="hidden sm:inline">
-        PikaOS is a gaming focused Linux distribution focussing on ease of use and high
-        compatability. Using the know how from <a class="underline" href="https://nobaraproject.org/">Nobara</a> combined with a <a class="underline" href="https://ubuntu.com/">Ubuntu</a> base, PikaOS is almost unrivaled in software compatability.
+        PikaOS is a gaming focused Linux distribution focussing on ease of use
+        and high compatability. Using the know how from <a
+          class="underline"
+          href="https://nobaraproject.org/">Nobara</a
+        > combined with a <a class="underline" href="https://ubuntu.com/"
+          >Ubuntu</a
+        > base, PikaOS is almost unrivaled in software compatability.
       </span>
     </Fragment>
   </Hero>
@@ -129,8 +134,8 @@ const meta = {
     }}
   /> -->
 
-   <!-- Features2 Widget ************** -->
-<!-- 
+  <!-- Features2 Widget ************** -->
+  <!-- 
   <Features2
     title="Most used widgets"
     subtitle="Provides frequently used components for building websites using Tailwind CSS"
@@ -195,48 +200,48 @@ const meta = {
 
   <!-- FAQs Widget ******************* -->
 
-  <!-- <FAQs
+  <FAQs
     title="Frequently Asked Questions"
-    subtitle="Duis turpis dui, fringilla mattis sem nec, fringilla euismod neque. Morbi tincidunt lacus nec tortor scelerisque pulvinar."
     highlight="FAQs"
     items={[
       [
         {
-          question: "What do I need to start?",
+          question: "Why Ubuntu?",
           answer:
-            "Space, the final frontier. These are the voyages of the Starship Enterprise. Its five-year mission: to explore strange new worlds. Many say exploration is part of our destiny, but it’s actually our duty to future generations.",
+            "Ubuntu is a very easy to use distribution with the most community support and cooperate support (if you google a proprietary app chances are it's only a deb) so it's the perfect base for our goals, and ubuntu holds a very special place in my heart (Cosmo), and the Launchpad PPA system is really awesome compared to other build systems.",
         },
         {
-          question: "How to install the Astro + Tailwind CSS template?",
+          question: "What is the snap situation on PikaOS?",
           answer:
-            "Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if they're going to make more shows. Some pilots get picked and become television programs. Some don't, become nothing. She starred in one of the ones that became nothing.",
+            "We have removed snaps from the ISOs, and they will not be forced upon you, firefox and other packages canonical turned into a snap, are now native packages by using it's official source (eg: firefox) or our friends at the xtradeb team (eg: chromium), though if you need snaps they are not completely blocked and can be manually installed.",
         },
         {
-          question: "What's something that you don't understand?",
+          question: "Why is apx present on this mutable distribution?",
           answer:
-            "A flower in my garden, a mystery in my panties. Heart attack never stopped old Big Bear. I didn't even know we were calling him Big Bear.",
+            "Although i totally see how our user base would never touch apx, I Cosmo require it for my operations (contributing to Nobara, maintaining my AUR submissions), and it has to be configured with the system that's why it's included, and either way it's a nice to have for power users, since they can install any packaging format they want safely (including the aur), and it won't harm or confuse new users since it's clearly marked as subsystem.",
         },
       ],
       [
         {
-          question: "What's an example of when you changed your mind?",
+          question:
+            "Why do you guys use pikman instead of apt like all the other ubuntu distributions?",
           answer:
-            "Michael Knight a young loner on a crusade to champion the cause of the innocent. The helpless. The powerless in a world of criminals who operate above the law. Here he comes Here comes Speed Racer. He's a demon on wheels.",
-        },
-        {
-          question: "What is something that you would like to try again?",
-          answer:
-            "A business big enough that it could be listed on the NASDAQ goes belly up. Disappears! It ceases to exist without me. No, you clearly don't know who you're talking to, so let me clue you in.",
+            "apt is very slow! so to have a good experience we need to use nala and we have flatpak and apx scattered everywhere like crazy, so we have 4 package managers at this point which is STUPID, so why not bring them all into one.",
         },
         {
           question:
-            "If you could only ask one question to each person you meet, what would that question be?",
-          answer:
-            "This is not about revenge. This is about justice. A lot of things can change in twelve years, Admiral. Well, that's certainly good to know. About four years. I got tired of hearing how young I looked.",
+            "Ubuntu is really slow moving distribution, isn't that terrible for a gaming distro?",
+          answer: `While yes that might be true in some cases, we have went through a lot of measures to remidiate this issue by
+<ul class='list-disc list-inside'>
+<li>Using a list of very Polished PPA & Official Sources.</li>
+<li>Updating a lot of stuff ourselves.</li>
+<li>Enable proposed and backports repositories which unfreezes the repositories and allows feature updates, while keeping the distro rock stable.</li>
+</ul>
+          `,
         },
       ],
     ]}
-  /> -->
+  />
 
   <!-- Stats Widget ****************** -->
 
@@ -251,31 +256,31 @@ const meta = {
 
   <!-- CallToAction Widget *********** -->
   <div id="download">
-  <Downloads
-    downloads={[
-      {
-        text: "Gnome",
-        hrefEU: "https://pikaos.ferreo.dev/PikaOS-Gnome-2210-amd64_23.02.17.iso",
-        hrefWW: "https://cdn.ferreo.dev/PikaOS-Gnome-2210-amd64_23.02.17.iso",
-        md5: "https://pikaos.ferreo.dev/PikaOS-Gnome-2210-amd64_23.02.17.md5",
-        isComgingSoon: false,
-      },
-      {
-        text: "KDE",
-        hrefEU: "https://pikaos.ferreo.dev/PikaOS-KDE-2210-amd64_23.02.18.iso",
-        hrefWW: "https://cdn.ferreo.dev/PikaOS-KDE-2210-amd64_23.02.18.iso",
-        md5: "https://pikaos.ferreo.dev/PikaOS-KDE-2210-amd64_23.02.18.md5",
-        isComgingSoon: false,
-      },
-    ]}
-  >
-    <Fragment slot="title">
-      PikaOS Download
-    </Fragment>
+    <Downloads
+      downloads={[
+        {
+          text: "Gnome",
+          hrefEU:
+            "https://pikaos.ferreo.dev/PikaOS-Gnome-2210-amd64_23.02.17.iso",
+          hrefWW: "https://cdn.ferreo.dev/PikaOS-Gnome-2210-amd64_23.02.17.iso",
+          md5: "https://pikaos.ferreo.dev/PikaOS-Gnome-2210-amd64_23.02.17.md5",
+          isComgingSoon: false,
+        },
+        {
+          text: "KDE",
+          hrefEU:
+            "https://pikaos.ferreo.dev/PikaOS-KDE-2210-amd64_23.02.18.iso",
+          hrefWW: "https://cdn.ferreo.dev/PikaOS-KDE-2210-amd64_23.02.18.iso",
+          md5: "https://pikaos.ferreo.dev/PikaOS-KDE-2210-amd64_23.02.18.md5",
+          isComgingSoon: false,
+        },
+      ]}
+    >
+      <Fragment slot="title">PikaOS Download</Fragment>
 
-    <Fragment slot="subtitle">
-      Grab our latest PikaOS ISO now!<br/><br/>
-    </Fragment>
-  </Downloads>
-</div>
+      <Fragment slot="subtitle">
+        Grab our latest PikaOS ISO now!<br /><br />
+      </Fragment>
+    </Downloads>
+  </div>
 </Layout>
