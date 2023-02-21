@@ -8,7 +8,7 @@ const CONFIG = {
     trailingSlash: false,
 
     title: 'PikaOS — The cool birb OS',
-    description: 'PikaOS is a gaming focused linux distribution focussing on ease of use and high compatability. Using the know how from Nobara combined with a Ubuntu base, PikaOS is almost unrivaled in software comaptability.',
+    description: 'PikaOS is a gaming focused linux distribution focussing on ease of use and high compatability. Using the know how from Nobara combined with a Ubuntu base, PikaOS is almost unrivaled in software compatability.',
     defaultImage: defaultImage,
 
     defaultTheme: 'dark', // Values: "system" | "light" | "dark" | "light:only" | "dark:only"
