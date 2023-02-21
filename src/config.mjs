@@ -3,7 +3,7 @@ import defaultImage from './assets/images/default.png';
 const CONFIG = {
     name: 'PikaOS',
 
-    origin: 'https://pikaos.ferreo.dev',
+    origin: 'https://pika-os.com',
     basePathname: '/',
     trailingSlash: false,
 
