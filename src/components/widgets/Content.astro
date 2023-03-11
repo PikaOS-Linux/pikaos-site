@@ -57,13 +57,13 @@ const {
     }
   </div>
   <div class="mx-auto max-w-6xl p-4 md:px-8">
-    <div class={`md:flex ${isReversed ? 'md:flex-row-reverse' : ''} md:gap-16`}>
-      <div class="md:basis-1/2 self-center">
+    <div>
+      <div class="max-w-screen-xl sm:mx-auto">
         {content && <div class="mb-12 text-lg text-gray-600 dark:text-slate-400" set:html={content} />}
 
         {
           items && (
-            <div class="space-y-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-8 lg:gap-x-8 md:grid-cols-3">
               {items.map(({ title: title2, description, icon }) => (
                 <div class="flex">
                   <div class="flex-shrink-0">

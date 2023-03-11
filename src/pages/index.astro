@@ -110,32 +110,42 @@ const meta = {
 
   <!-- Content Widget **************** -->
 
-  <!-- <Content
-    highlight="Inside template"
-    title="And what's inside? ..."
-    content="Ne dicta praesent ocurreret has, diam theophrastus at pro. Eos etiam regione ut, persius eripuit quo id. Sit te euismod tacimates."
+  <Content
+    highlight="March 2023 Update"
+    title="Changelog"
+    content=""
     items={[
       {
-        title: "Per ei quaeque sensibus",
+        title: "Global",
         description:
-          "Ex usu illum iudico molestie. Pro ne agam facete mediocritatem, ridens labore facete mea ei. Pro id apeirian dignissim.",
+          "* Removed RAM requirements from the installer </br> \
+           * Moved to github powered build system and self hosted package repo </br> \
+           * Added Support for xbootldr /boot systemd-boot no longer copies kernels to efi </br> \
+           * Added Swap Options in the installer </br> \
+           * Added Neofetch art </br> \
+           * Almost every single package in the PikaOS repos has been updated to latest upstream </br> \
+           * Patched mintdrivers to show new open source nvidia drivers </br> \
+           * Fixed a bug where gamescope-session becomes default after install game-utils </br> \
+           * Fixed a bug where sound is gone after install media codecs </br> \
+           * Rebased Kernel to CachyOS 6.2.1 and applied the full set of nobara patches to it </br> \
+           * Updated Linux firmware to latest git </br> \
+           * Updated ffmpeg to 6.0 and added 5.1.2 fallback for compatibility </br> \
+           * Fixed a bug where fish wouldn't source /etc/profile </br> \
+           * Updated AMDGPU to 5.4.3 (RDNA3 AMF Support, Updated firmware for all amdgpus)",
       },
       {
-        title: "Cu imperdiet posidonium sed",
+        title: "Gnome",
         description:
-          "Amet utinam aliquando ut mea, malis admodum ocurreret nec et, elit tibique cu nec. Nec ex maluisset inciderint, ex quis.",
+          "* Fixed arcmenu missing dependency </br> \
+           * Updated VRR session to 43.1",
       },
       {
-        title: "Nulla omittam sadipscing mel ne",
+        title: "KDE",
         description:
-          "At sed possim oporteat probatus, justo graece ne nec, minim commodo legimus ut vix. Ut eos iudico quando soleat, nam modus.",
+          "* Updated to 5.27.2",
       },
     ]}
-    image={{
-      src: import("~/assets/images/caos.jpg"),
-      alt: "Colorful Image",
-    }}
-  /> -->
+  />
 
   <!-- Features2 Widget ************** -->
   <!-- 
@@ -264,17 +274,17 @@ const meta = {
         {
           text: "Gnome",
           hrefEU:
-            "https://pika-os.com/PikaOS-Gnome-2210-amd64_23.02.17.iso",
-          hrefWW: "https://cdn.pika-os.com/PikaOS-Gnome-2210-amd64_23.02.17.iso",
-          md5: "https://pika-os.com/PikaOS-Gnome-2210-amd64_23.02.17.md5",
+            "https://pika-os.com/PikaOS-Gnome-2210-amd64_23.03.11.iso",
+          hrefWW: "https://cdn.pika-os.com/PikaOS-Gnome-2210-amd64_23.03.11.iso",
+          md5: "https://pika-os.com/PikaOS-Gnome-2210-amd64_23.03.11.md5",
           isComgingSoon: false,
         },
         {
           text: "KDE",
           hrefEU:
-            "https://pika-os.com/PikaOS-KDE-2210-amd64_23.02.18.iso",
-          hrefWW: "https://cdn.pika-os.com/PikaOS-KDE-2210-amd64_23.02.18.iso",
-          md5: "https://pika-os.com/PikaOS-KDE-2210-amd64_23.02.18.md5",
+            "https://pika-os.com/PikaOS-KDE-2210-amd64_23.03.11.iso",
+          hrefWW: "https://cdn.pika-os.com/PikaOS-KDE-2210-amd64_23.03.11.iso",
+          md5: "https://pika-os.com/PikaOS-KDE-2210-amd64_23.03.11.md5",
           isComgingSoon: false,
         },
       ]}
