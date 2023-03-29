@@ -1,0 +1,50 @@
+---
+type Props = {
+  title: string;
+  description: string;
+};
+const { title, description } = Astro.props;
+---
+
+<div
+  class="w-full rounded-lg border px-2 py-2 transition-[height] duration-500 ease-in-out dark:bg-slate-800"
+>
+  <button
+    class="w-full text-center md:text-start accordion flex flex-row gap-x-1 py-1 justify-between items-center"
+  >
+    <h3
+      class="opacity-80 w-full transition-opacity duration-500 ease-in-out font-medium pointer-events-none"
+    >
+      {title}
+    </h3>
+    <div class="pointer-events-none transition-transform duration-500 shrink-0 h-4 w-4">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="shrink md:h-4 fill-slate-800 dark:fill-white transition-transform duration-500 ease-in-out pointer-events-none"
+        viewBox="0 0 384 512"
+      >
+        <path
+          d="M169.4 342.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 274.7 54.6 137.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"
+        ></path></svg>
+    </div>
+  </button>
+  <p
+    style="max-height: 0px;"
+    class="overflow-hidden transition-all duration-500 text-center md:text-start ease-in-out pointer-events-none"
+  >
+    {description}
+  </p>
+</div>
+
+<script>
+  for (let e of document.getElementsByClassName("accordion")) {
+    e.addEventListener("click", function (e) {
+      (e.target as HTMLElement).children[0].classList.toggle("opacity-80");
+      (e.target as HTMLElement).children[0].classList.toggle("font-bold");
+      (e.target as HTMLElement).children[1].classList.toggle("rotate-180");
+      if (this.nextElementSibling.style.maxHeight === "0px")
+        this.nextElementSibling.style.maxHeight = "500px";
+      else this.nextElementSibling.style.maxHeight = "0px";
+    });
+  }
+</script>
