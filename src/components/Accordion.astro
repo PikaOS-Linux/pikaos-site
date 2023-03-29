@@ -1,0 +1,80 @@
+---
+import AccordionWidget from "./widgets/AccordionWidget.astro";
+interface AccordionWidgetProps {
+  title: string;
+  description: string;
+}
+const accordionData: AccordionWidgetProps[] = [
+  {
+    title: "Official Firefox and thunderbird Sources",
+    description:
+      "The latest Firefox and thunderbird packages will be pulled from the official mozilla PPA",
+  },
+  {
+    title:
+      "Snap phased out in favor of Native packaging and of course flatpak",
+    description:
+      "Every single package that was turned into a snap, has been reverted into a deb, and flatpak is installed by default",
+  },
+  {
+    title:
+      "6 unique desktop layouts & a lot accent colors available in the PikaOS Gnome Layouts app",
+    description:
+      "On the Gnome ISO: The app PikaOS Gnome Layouts will provide 6 experiences to other DEs and OSes",
+  },
+  {
+    title: "Latest Stable Mesa Drivers by Valve's kisak",
+    description:
+      "Fresh Up to date graphics drivers for intel and AMD by a valve employee",
+  },
+  {
+    title: "Latest AMDGPU firmware pulled from AMD's official repos",
+    description:
+      "Firmware files will be pulled from https://repo.radeon.com/ to provide the best experience for AMD users",
+  },
+  {
+    title: "XONE, XPADNEO, and XPAD-NOONE installable through the welcome app",
+    description:
+      "Drivers That Expand the functionality of Xbox One and above controllers can be install with a single click",
+  },
+  {
+    title: "Lutris constantly updated to latest releases",
+    description: "We Do not wait around for ubuntu to do it we do it ourselves",
+  },
+  {
+    title: "gamescope updated to latest git(HDR Supported!)",
+    description:
+      "We Do not wait around for ubuntu to do it we do it ourselves and we have a standalone gamescope session in sessions cog wheel",
+  },
+  {
+    title:
+      "vkbasalt and mangohud constantly updated to latest releases, and built with 32 bit support",
+
+    description: "We do not wait around for Ubuntu to do it, yywe do it ourselves",
+  },
+  {
+    title:
+      "Support for amdgpu proprietary add-ons. (amdvlk-pro, amdvlk, opencl-legacy, AMF)",
+    description: `We have a GUI app to safely install these driver components safely
+Note: they will not interfere with normal open source driver they are only loaded when uses the cmd prefixes vk_pro, vk_amdvlk, cl_pro`,
+  },
+  {
+    title: "OBS-Studio patched with gstreamer va-api, and AMD AMF support",
+    description:
+      "Our OBS Studio will have the gstreamer vaapi enconder which is far superior to the default ffmpeg one",
+  },
+  {
+    title: "And The offical AMD AMF encoder",
+    description:
+      "ROCm stack (including HIP) installable through the welcome app.",
+  },
+];
+---
+
+<div class="w-full text-start space-y-4 pt-10">
+  {
+    accordionData.map((el) => (
+      <AccordionWidget title={el.title} description={el.description} />
+    ))
+  }
+</div>
