@@ -44,12 +44,12 @@ const meta = {
     <Fragment slot="subtitle">
       <span class="hidden sm:inline">
         PikaOS is a gaming focused Linux distribution focussing on ease of use
-        and high compatability. Using the know how from <a
+        and high compatibility. Using the know how from <a
           class="underline"
           href="https://nobaraproject.org/">Nobara</a
         > combined with a <a class="underline" href="https://ubuntu.com/"
           >Ubuntu</a
-        > base, PikaOS is almost unrivaled in software compatability.
+        > base, PikaOS is almost unrivaled in software compatibility.
         Not to be confused with PikeOS which isn't even a gaming linux distribution and is apparently made by people that like to file spurious trademark claims.
       </span>
     </Fragment>
@@ -112,38 +112,22 @@ const meta = {
   <!-- Content Widget **************** -->
 
   <Content
-    highlight="March 2023 Update"
+    highlight="May 2023 Update"
     title="Changelog"
     content=""
     items={[
       {
-        title: "Global",
-        description:
-          "* Removed RAM requirements from the installer </br> \
-           * Moved to github powered build system and self hosted package repo </br> \
-           * Added Support for xbootldr /boot systemd-boot no longer copies kernels to efi </br> \
-           * Added Swap Options in the installer </br> \
-           * Added Neofetch art </br> \
-           * Almost every single package in the PikaOS repos has been updated to latest upstream </br> \
-           * Patched mintdrivers to show new open source nvidia drivers </br> \
-           * Fixed a bug where gamescope-session becomes default after install game-utils </br> \
-           * Fixed a bug where sound is gone after install media codecs </br> \
-           * Rebased Kernel to CachyOS 6.2.1 and applied the full set of nobara patches to it </br> \
-           * Updated Linux firmware to latest git </br> \
-           * Updated ffmpeg to 6.0 and added 5.1.2 fallback for compatibility </br> \
-           * Fixed a bug where fish wouldn't source /etc/profile </br> \
-           * Updated AMDGPU to 5.4.3 (RDNA3 AMF Support, Updated firmware for all amdgpus)",
-      },
-      {
-        title: "Gnome",
-        description:
-          "* Fixed arcmenu missing dependency </br> \
-           * Updated VRR session to 43.1",
-      },
-      {
-        title: "KDE",
-        description:
-          "* Updated to 5.27.2",
+        title: "Updates",
+        description: "* Rebased on Ubuntu 23.04 Lunar Lobster </br> \
+           * Replaced ibus with fcitx5 fixing all keyboard issues </br> \
+           * Every single package in the PikaOS repos has been upgraded to latest release </br> \
+           * Pipewire has been moved to PikaOS repos and will be updated regularly and with more buildopts such as AAC bluetooth audio </br> \
+           * New first-setup applications have been made for better inital setup (pika-gnome-first-setup on gnome, plasma-welcome on KDE) the old pika-welcome has been recycled as PikaOS HUB </br> \
+           * mintupdate has been swapped with ubuntu update-manager + flatpak hook because mintupdate is super buggy </br> \
+           * Filesystem choices for erase disk in calamares have been added </br> \
+           * bootloader has been swapped from systemd-boot to refind due to people having diffculties with it in dual boots and boot times </br> \
+           * Added more containers to apx </br> \
+           * Added AV1 VA-API patch to gstreamer </br>",
       },
     ]}
   />
@@ -232,7 +216,7 @@ const meta = {
         {
           question: "Why is apx present on this mutable distribution?",
           answer:
-            "Although i totally see how our user base would never touch apx, I Cosmo require it for my operations (contributing to Nobara, maintaining my AUR submissions), and it has to be configured with the system that's why it's included, and either way it's a nice to have for power users, since they can install any packaging format they want safely (including the aur), and it won't harm or confuse new users since it's clearly marked as subsystem.",
+            "Although Ii totally see how our user base would never touch apx, I Cosmo require it for my operations (contributing to Nobara, maintaining my AUR submissions), and it has to be configured with the system that's why it's included, and either way it's a nice to have for power users, since they can install any packaging format they want safely (including the aur), and it won't harm or confuse new users since it's clearly marked as subsystem.",
         },
       ],
       [
@@ -275,17 +259,17 @@ const meta = {
         {
           text: "Gnome",
           hrefEU:
-            "https://pika-os.com/PikaOS-Gnome-2210-amd64-23.03.28.iso",
-          hrefWW: "https://cdn.pika-os.com/PikaOS-Gnome-2210-amd64-23.03.28.iso",
-          md5: "https://pika-os.com/PikaOS-Gnome-2210-amd64-23.03.28.md5",
+            "https://pika-os.com/PikaOS-Gnome-2304-amd64-23.05.27.iso",
+          hrefWW: "https://cdn.pika-os.com/PikaOS-Gnome-2304-amd64-23.05.27.iso",
+          md5: "https://pika-os.com/PikaOS-Gnome-2304-amd64-23.05.27.md5",
           isComgingSoon: false,
         },
         {
           text: "KDE",
           hrefEU:
-            "https://pika-os.com/PikaOS-KDE-2210-amd64-23.03.28.iso",
-          hrefWW: "https://cdn.pika-os.com/PikaOS-KDE-2210-amd64-23.03.28.iso",
-          md5: "https://pika-os.com/PikaOS-KDE-2210-amd64-23.03.28.md5",
+            "https://pika-os.com/PikaOS-KDE-2304-amd64-23.05.27.iso",
+          hrefWW: "https://cdn.pika-os.com/PikaOS-KDE-2304-amd64-23.05.27.iso",
+          md5: "https://pika-os.com/PikaOS-KDE-2304-amd64-23.05.27.md5",
           isComgingSoon: false,
         },
       ]}
