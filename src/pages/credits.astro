@@ -1,0 +1,18 @@
+---
+import CreditsWidget from "~/components/widgets/CreditsWidget.astro";
+import { SITE } from "~/config.mjs";
+import Layout from "~/layouts/PageLayout.astro";
+
+const meta = {
+  title: SITE.title,
+  description: SITE.description,
+  dontUseTitleTemplate: true,
+};
+---
+
+<Layout {meta}>
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12 md:py-20">
+    <h1 class="text-xl md:text-4xl font-bold text-center pb-10">Credits</h1>
+    <CreditsWidget />
+  </div>
+</Layout>

@@ -1,0 +1,85 @@
+---
+interface CreditsData {
+  contributor: string;
+  role: string;
+}
+const credits: CreditsData[] = [
+  {
+    role: "Kernel Base",
+    contributor: "CachyOS Team(peter)",
+  },
+  {
+    role: "Welcome App UI",
+    contributor: "PizzaLovingNerd",
+  },
+  {
+    role: "Themeing",
+    contributor: "Vinceliuice & Papirus",
+  },
+  {
+    role: "Software, Updates and Webapps manager",
+    contributor: "The Linux Mint team",
+  },
+  {
+    role: "Encryption Support",
+    contributor: "SkimmingDeath",
+  },
+  {
+    role: "Standalone gamescope session",
+    contributor: "The ChimeraOS Team",
+  },
+  {
+    role: "Graphics Drivers",
+    contributor: "Kisak",
+  },
+  {
+    role: "Repositories, Firmware Manager and the tiling in GNOME-Shell with POP_SHELL",
+    contributor: "The POP!_OS team",
+  },
+  {
+    role: "Hybrid GPU Controls",
+    contributor: "asus-linux",
+  },
+  {
+    role: "Anti Snap",
+    contributor: "The Xtradeb team",
+  },
+  {
+    role: "apx package manager",
+    contributor: "The Vanilla OS Team",
+  },
+  {
+    role: "Wallpapers",
+    contributor: "Neytirix",
+  },
+  {
+    role: "Audio Artist",
+    contributor: "4lk4",
+  },
+  {
+    role: "Logo Artist & Financial Contributor",
+    contributor: "nesper8",
+  },
+];
+---
+
+<div class="grid place-items-center">
+  <table class="text-left">
+    <thead class="bg-black/50 dark:bg-gray-700 text-white uppercase font-bold">
+      <tr>
+        <th class="px-3 py-3">Role</th>
+        <th class="px-3 py-3">Contributor</th>
+      </tr>
+    </thead>
+    <tbody>
+      {
+        credits.map(({ contributor, role }) => (
+          <tr class="border-b border-b-gray-700">
+            <td class="px-3 py-3 font-medium">{role}</td>
+            <td class="px-3 py-3 font-medium">{contributor}</td>
+          </tr>
+        ))
+      }
+    </tbody>
+  </table>
+</div>
