@@ -6,12 +6,18 @@ type Props = {
 const { title, description } = Astro.props;
 ---
 
-<accordion-widget class="w-full rounded-lg border block overflow-hidden closed transition-height duration-200 relative px-2 py-2 dark:bg-slate-800">
-  <button class="w-full text-center md:text-start accordion flex flex-row gap-x-1 py-1 justify-between items-center">
+<accordion-widget
+  class="w-full rounded-lg border block overflow-hidden transition-height duration-200 relative px-2 py-2 dark:bg-slate-800"
+>
+  <button
+    class="w-full text-center md:text-start accordion flex flex-row gap-x-1 py-1 justify-between items-center"
+  >
     <h3 class="hed w-full font-bold pointer-events-none">
       {title}
     </h3>
-    <div class="chev pointer-events-none transition-transform duration-200 shrink-0 h-4 w-4">
+    <div
+      class="chev pointer-events-none transition-transform duration-200 shrink-0 h-4 w-4"
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         class="shrink md:h-4 fill-slate-800 dark:fill-white transition-transform duration-500 ease-in-out pointer-events-none"
@@ -23,32 +29,56 @@ const { title, description } = Astro.props;
       >
     </div>
   </button>
-  <p style="top: 50px" class="text-center md:text-start absolute pointer-events-none">
+  <p class="text-center md:text-start absolute pointer-events-none">
     {description}
   </p>
 </accordion-widget>
 
 <script>
   class AccordionWidget extends HTMLElement {
+    top: HTMLElement;
+    bottom: HTMLElement;
+    chev: HTMLElement;
+    padding = 22;
+    topPadding = 15;
+
     constructor() {
       super();
-      this.addEventListener("click", (event) => {
-        const target = event.target as HTMLElement;
-        const parent = target.parentNode as HTMLElement;
-        const next = target.nextElementSibling as HTMLElement;
-        const nextHeight = next.getBoundingClientRect().height;
-        parent.style.height = parent.style.height ? "" : 58 + nextHeight + "px";
-        parent.classList.toggle("closed");
-        target.querySelector(".chev")?.classList.toggle("rotate-180");
+      this.top = this.querySelector(".accordion") || new HTMLElement();
+      this.bottom = this.querySelector("p") || new HTMLElement();
+      this.chev = this.top.querySelector(".chev") || new HTMLElement();
+      this.addEventListener("click", () => {
+        this.toggleOpen();
+      });
+      window.addEventListener("resize", () => {
+        this.setInitialHeight();
+        this.chev.classList.remove("rotate-180");
+      });
+      this.setInitialHeight();
+    }
+
+    toggleOpen() {
+      requestAnimationFrame(() => {
+        const nextHeight = this.bottom.clientHeight;
+        const targetHeight = this.top.clientHeight;
+        const parentHeight = this.clientHeight;
+        this.style.height =
+        parentHeight >= targetHeight + nextHeight
+            ? targetHeight + this.padding + "px"
+            : targetHeight + nextHeight + this.padding +"px";
+        this.bottom.style.top = targetHeight + this.topPadding + "px";
+        this.chev.classList.toggle("rotate-180");
+      });
+    }
+
+    setInitialHeight() {
+      requestAnimationFrame(() => {
+        console.log(this.padding);
+        this.style.height =  this.top.clientHeight + this.padding + "px"
+        this.bottom.style.top = this.top.clientHeight + this.topPadding + "px";
       });
     }
   }
 
   customElements.define("accordion-widget", AccordionWidget);
 </script>
-
-<style>
-  .closed {
-    height: 58px;
-  }
-</style>
