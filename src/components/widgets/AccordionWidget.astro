@@ -73,7 +73,6 @@ const { title, description } = Astro.props;
 
     setInitialHeight() {
       requestAnimationFrame(() => {
-        console.log(this.padding);
         this.style.height =  this.top.clientHeight + this.padding + "px"
         this.bottom.style.top = this.top.clientHeight + this.topPadding + "px";
       });
