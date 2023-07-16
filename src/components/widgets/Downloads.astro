@@ -3,7 +3,6 @@ import { Icon } from 'astro-icon';
 
 interface Download {
   text: string;
-  hrefEU: string;
   hrefWW: string;
   md5: string;
   isComgingSoon: boolean;
@@ -37,11 +36,11 @@ const {
           )
         }
         {subtitle && <p class="text-xl text-gray-600 dark:text-slate-400" set:html={subtitle} />}
-        <div class="grid grid-cols-4 gap-4"><div class="mb-3 text-xl font-bold">ISO</div><div class="mb-3 text-xl font-bold">EU Mirror</div><div class="mb-3 text-xl font-bold">World Mirror</div><div class="mb-3 text-xl font-bold">Hash</div>
+        <div class="grid grid-cols-4 gap-4"><div class="mb-3 text-xl font-bold">ISO</div><div class="mb-3 text-xl font-bold">World Mirror</div><div class="mb-3 text-xl font-bold">Hash</div>
         {
         downloads &&
         downloads.map((download) => (
-          <div>{download.text}</div><div>{download.isComgingSoon ? "Coming Soon" : (<a class="flex flex-row flex-auto justify-center" href={download.hrefEU} target="_blank">{<Icon name="tabler:download" class="w-5 h-5 mr-1 -ml-1.5" />}ISO</a>)}</div><div>{download.isComgingSoon ? "Coming Soon" : (<a class="flex flex-row flex-auto justify-center" href={download.hrefWW} target="_blank">{<Icon name="tabler:download" class="w-5 h-5 mr-1 -ml-1.5" />}ISO</a>)}</div><div>{download.isComgingSoon ? "Coming Soon" : (<a class="flex flex-row flex-auto justify-center" href={download.md5} target="_blank">{<Icon name="tabler:download" class="w-5 h-5 mr-1 -ml-1.5" />}MD5</a>)}</div>
+          <div>{download.text}</div><div>{download.isComgingSoon ? "Coming Soon" : (<a class="flex flex-row flex-auto justify-center" href={download.hrefWW} target="_blank">{<Icon name="tabler:download" class="w-5 h-5 mr-1 -ml-1.5" />}ISO</a>)}</div><div>{download.isComgingSoon ? "Coming Soon" : (<a class="flex flex-row flex-auto justify-center" href={download.md5} target="_blank">{<Icon name="tabler:download" class="w-5 h-5 mr-1 -ml-1.5" />}MD5</a>)}</div>
           ))
         }
         </div>
