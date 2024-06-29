@@ -1,0 +1,298 @@
+---
+import { SITE } from "~/config.mjs";
+import Layout from "~/layouts/PageLayout.astro";
+
+import Announcement from "~/components/widgets/Announcement.astro";
+import Hero from "~/components/widgets/Hero.astro";
+import Note from "~/components/widgets/Note.astro";
+import Features from "~/components/widgets/Features.astro";
+import Features2 from "~/components/widgets/Features2.astro";
+import Steps from "~/components/widgets/Steps.astro";
+import Content from "~/components/widgets/Content.astro";
+import FAQs from "~/components/widgets/FAQs.astro";
+import Stats from "~/components/widgets/Stats.astro";
+import Downloads from "~/components/widgets/Downloads.astro";
+
+const meta = {
+  title: SITE.title,
+  description: SITE.description,
+  dontUseTitleTemplate: true,
+};
+---
+
+<Layout {meta}>
+
+  <Announcement></Announcement>
+<!-- Hero Widget ******************* -->
+
+  <Hero
+    callToAction={{
+      text: "Get PikaOS",
+      href: "#download",
+      icon: "tabler:download",
+    }}
+    callToAction2={{ text: "Learn more", href: "#features" }}
+    image={{
+      src: import("~/assets/images/hero.png"),
+      alt: "AstroWind Hero Image",
+    }}
+  >
+    <Fragment slot="title">
+      Your new Linux distro, <span>PikaOS</span>!
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="hidden sm:inline">
+        PikaOS is a gaming focused Linux distribution focussing on ease of use
+        and high compatibility. Using the know how from <a
+          class="underline"
+          href="https://nobaraproject.org/">Nobara</a
+        > combined with a <a class="underline" href="https://ubuntu.com/"
+          >Ubuntu</a
+        > base, PikaOS is almost unrivaled in software compatibility.
+        Our repository is also extremely fast globally thanks to <a class="underline" href="https://cloudflare.com/">Cloudflare's</a> CDN. They also power our global ISO mirrors and status page.
+      </span>
+    </Fragment>
+  </Hero>
+
+  <!-- Note Widget ******************* -->
+
+  <Note />
+
+  <!-- Features Widget *************** -->
+
+  <Features
+    highlight="Features"
+    title=""
+    subtitle="What sets PikaOS apart?"
+    items={[
+      [
+        {
+          title: "Cute Birb",
+          description:
+            "PikaOS has a cute birb as the logo/mascot. Who doesn't love the little guy? OwO",
+          icon: "tabler:viewfinder",
+        },
+        {
+          title: "Gaming Out Of The box",
+          description:
+            "PikaOS is setup to enable Linux gaming as pain free as possible out of the box.",
+          icon: "tabler:components",
+        },
+        {
+          title: "Drivers Included",
+          description:
+            "We include the best drivers for your hardware either baked into the OS or installable through our welcome app.",
+          icon: "tabler:list-check",
+        },
+      ],
+      [
+        {
+          title: "Excellent Performance",
+          description:
+            "The combination of up to date drivers and a custom tweaked kernel means PikaOS is faster than most distros with the default kernel.",
+          icon: "tabler:rocket",
+        },
+        {
+          title: "Excellent Compatability",
+          description:
+            "Due to the Ubuntu base and custom patches, PikaOS has high levels of software and hardware compatability.",
+          icon: "tabler:app-window",
+        },
+        {
+          title: "Open Source",
+          description:
+            "All of our code can be found on our Github and our PPAs are available on launchpad. Contributions are also very welcome!",
+          icon: "tabler:bulb",
+        },
+      ],
+    ]}
+  />
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    highlight="May 2023 Update"
+    title="Changelog"
+    content=""
+    items={[
+      {
+        title: "Updates",
+        description: "* Rebased on Ubuntu 23.04 Lunar Lobster </br> \
+           * Replaced ibus with fcitx5 fixing all keyboard issues </br> \
+           * Every single package in the PikaOS repos has been upgraded to latest release </br> \
+           * Pipewire has been moved to PikaOS repos and will be updated regularly and with more buildopts such as AAC bluetooth audio </br> \
+           * New first-setup applications have been made for better inital setup (pika-gnome-first-setup on gnome, plasma-welcome on KDE) the old pika-welcome has been recycled as PikaOS HUB </br> \
+           * mintupdate has been swapped with ubuntu update-manager + flatpak hook because mintupdate is super buggy </br> \
+           * Filesystem choices for erase disk in calamares have been added </br> \
+           * bootloader has been swapped from systemd-boot to refind due to people having diffculties with it in dual boots and boot times </br> \
+           * Added more containers to apx </br> \
+           * Added AV1 VA-API patch to gstreamer </br>",
+      },
+    ]}
+  />
+
+  <!-- Features2 Widget ************** -->
+  <!-- 
+  <Features2
+    title="Most used widgets"
+    subtitle="Provides frequently used components for building websites using Tailwind CSS"
+    highlight="Components"
+    items={[
+      {
+        title: "Headers",
+        description:
+          "In general, Headers contain information that makes it easier for visitors to interact with the website.",
+        icon: "flat-color-icons:template",
+      },
+      {
+        title: "Heros",
+        description:
+          "If you want your website to get more than its fair share of visitors, the Hero section needs to be stellar.",
+        icon: "flat-color-icons:gallery",
+      },
+      {
+        title: "Features",
+        description:
+          "Display your product in action and how the Features actually create a solution for your target customer.",
+        icon: "flat-color-icons:todo-list",
+      },
+      {
+        title: "Content",
+        description:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.",
+        icon: "flat-color-icons:document",
+      },
+      {
+        title: "Call-to-Action",
+        description:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.",
+        icon: "flat-color-icons:advertising",
+      },
+      {
+        title: "Pricing",
+        description:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.",
+        icon: "flat-color-icons:currency-exchange",
+      },
+      {
+        title: "Testimonial",
+        description:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.",
+        icon: "flat-color-icons:voice-presentation",
+      },
+      {
+        title: "Contact",
+        description:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.",
+        icon: "flat-color-icons:business-contact",
+      },
+      {
+        title: "Footers",
+        description:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.",
+        icon: "icon-park:page-template",
+      },
+    ]}
+  /> -->
+
+  <!-- FAQs Widget ******************* -->
+
+  <FAQs
+    title="Frequently Asked Questions"
+    highlight="FAQs"
+    items={[
+      [
+        {
+          question: "Why Ubuntu?",
+          answer:
+            "Ubuntu is a very easy to use distribution with the most community support and corperate support (if you google a proprietary app chances are it's only a deb) so it's the perfect base for our goals, and Ubuntu holds a very special place in my heart (Cosmo), and the Launchpad PPA system is really awesome compared to other build systems.",
+        },
+        {
+          question: "What is the snap situation on PikaOS?",
+          answer:
+            "We have removed snaps from the ISOs, and they will not be forced upon you. Firefox and other packages Canonical turned into a snap, are now native packages by using its official source (eg: firefox) or our friends at the xtradeb team (eg: chromium), though snaps they are not completely blocked and can be manually installed.",
+        },
+        {
+          question: "Why is apx present on this mutable distribution?",
+          answer:
+            "Although I totally see how our user base would never touch apx, I (Cosmo) require it for my operations (contributing to Nobara, maintaining my AUR submissions), and it has to be configured with the system (that's why its included), and either way it's a nice to have for power users, since they can install any packaging format they want safely (including the AUR), and it won't harm or confuse new users since it's clearly marked as subsystem.",
+        },
+      ],
+      [
+        {
+          question:
+            "Why do you guys use pikman instead of apt like all the other Ubuntu distributions?",
+          answer:
+            "apt is very slow! so to have a good experience we need to use nala and we have flatpak and apx scattered everywhere like crazy, so we have 4 package managers at this point which is STUPID, so why not bring them all into one.",
+        },
+        {
+          question:
+            "Ubuntu is really slow moving distribution, isn't that terrible for a gaming distro?",
+          answer: `While yes that might be true in some cases, we have went through a lot of measures to remidiate this issue by
+<ul class='list-disc list-inside'>
+<li>Using a list of very Polished PPA & Official Sources.</li>
+<li>Updating a lot of stuff ourselves.</li>
+<li>Enable proposed and backports repositories which unfreezes the repositories and allows feature updates, while keeping the distro rock stable.</li>
+</ul>
+          `,
+        },
+      ],
+    ]}
+  />
+
+  <!-- Stats Widget ****************** -->
+
+  <!-- <Stats
+    items={[
+      { name: "Downloads", value: "132K" },
+      { name: "Stars", value: "24.8K" },
+      { name: "Forks", value: "10.3K" },
+      { name: "Users", value: "48.4K" },
+    ]}
+  /> -->
+
+  <!-- CallToAction Widget *********** -->
+  <div id="download">
+    <Downloads
+      downloads={[
+        {
+          text: "Gnome",
+          hrefWW: "https://cdn.pika-os.com/PikaOS-Gnome-3-amd64-24.04.05.iso",
+          md5: "https://iso.pika-os.com/PikaOS-Gnome-3-amd64-24.04.05.md5",
+          isComgingSoon: false,
+        },
+        {
+          text: "KDE",
+          hrefWW: "https://cdn.pika-os.com/PikaOS-KDE-3-amd64-24.04.05.iso",
+          md5: "https://iso.pika-os.com/PikaOS-KDE-3-amd64-24.04.05.md5",
+          isComgingSoon: false,
+        },
+        {
+          text: "Hyprland (BETA)",
+          hrefWW: "https://cdn.pika-os.com/PikaOS-Hyprland-2304-amd64-23.09.08.iso",
+          md5: "https://iso.pika-os.com/PikaOS-Hyprland-2304-amd64-23.09.08.md5",
+          isComgingSoon: true,
+        },
+        {
+          text: "Gnome Nvidia",
+          hrefWW: "https://cdn.pika-os.com/PikaOS-nvidia-Gnome-3-amd64-24.04.05.iso",
+          md5: "https://iso.pika-os.com/PikaOS-nvidia-Gnome-3-amd64-24.04.05.md5",
+          isComgingSoon: false,
+        },
+        {
+          text: "KDE Nvidia",
+          hrefWW: "https://cdn.pika-os.com/PikaOS-nvidia-KDE-3-amd64-24.04.05.iso",
+          md5: "https://iso.pika-os.com/PikaOS-nvidia-KDE-3-amd64-24.04.05.md5",
+          isComgingSoon: false,
+        },
+      ]}
+    >
+      <Fragment slot="title">PikaOS Download</Fragment>
+
+      <Fragment slot="subtitle">
+        Grab our latest PikaOS ISO now!<br /><br />
+      </Fragment>
+    </Downloads>
+  </div>
+</Layout>
